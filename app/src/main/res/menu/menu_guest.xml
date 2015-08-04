@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.chihping.almostthere.activities.MainActivity">
+
+    <item android:id="@+id/action_add_guest"
+        android:title="@string/action_add_guest"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+    <item android:id="@+id/action_remove_guest"
+        android:title="@string/action_remove_guest"
+        android:orderInCategory="100"
+        app:showAsAction="always" />
+</menu>
