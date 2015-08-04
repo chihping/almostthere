@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chihping.almostthere.App;
+import com.chihping.almostthere.Constants;
 import com.chihping.almostthere.R;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -126,12 +127,11 @@ public class LoginActivity extends Activity implements
             @Override
             public void onAuthStateChanged(AuthData authData) {
                 mAuthProgressDialog.hide();
-                setAuthenticatedUser(authData);
             }
         };
 
         /* Create the Firebase ref that is used for all authentication with Firebase */
-        mFirebaseRef = new Firebase(getResources().getString(R.string.firebase_url));
+        mFirebaseRef = new Firebase(Constants.FIREBASE_BASE_URL);
 
         /* Check if the user is authenticated with Firebase already. If this is the case we can set the authenticated
          * user and hide hide any login buttons */
@@ -294,7 +294,7 @@ public class LoginActivity extends Activity implements
             String name = (String) authData.getProviderData().get("displayName");
             String email = (String) authData.getProviderData().get("email");
             if (name != null) {
-                Toast.makeText(this, "Logged in as " + name + " (" + email + ")" ,Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Logged in as " + name + " (" + email + ")" ,Toast.LENGTH_SHORT).show();
             }
 
             Intent startMain = new Intent(this, MainActivity.class);

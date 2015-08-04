@@ -21,7 +21,7 @@ public class App extends Application {
     public void onCreate(){
         super.onCreate();
         Firebase.setAndroidContext(this);
-
+        Firebase.getDefaultConfig().setPersistenceEnabled(true);
         bus = new Bus(ThreadEnforcer.ANY);
     }
 
